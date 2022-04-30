@@ -25,7 +25,7 @@ object RouteGuideClientApp extends ZIOAppDefault {
   def getFeature(
       lat: Int,
       lng: Int
-  ): ZIO[RouteGuideClient, Status, Unit] =
+  ): ZIO[RouteGuideClient with Console, Status, Unit] =
     (for {
       f <- RouteGuideClient.getFeature(Point(lat, lng))
       _ <- printLine(s"""Found feature called "${f.name}".""").orDie

@@ -61,5 +61,5 @@ object ExampleServerWithMetadata extends ZIOAppDefault {
   def run = myAppLogic.exitCode
 
   val myAppLogic =
-    serverWait.provideLayer(serverLive(8080))
+    serverWait.provideCustomLayer(serverLive(8080))
 }

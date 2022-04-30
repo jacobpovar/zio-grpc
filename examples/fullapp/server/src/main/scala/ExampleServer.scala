@@ -58,5 +58,5 @@ object ExampleServer extends ZIOAppDefault {
   def run = myAppLogic.exitCode
 
   val myAppLogic =
-    serverWait.provideLayer(serverLive(9090))
+    serverWait.provideCustomLayer(serverLive(9090))
 }
