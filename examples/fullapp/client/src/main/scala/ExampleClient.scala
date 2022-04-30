@@ -27,5 +27,5 @@ object ExampleClient extends zio.ZIOAppDefault {
       _ <- printLine(f.resp)
     } yield ())
       .onError { c => printLine(c.prettyPrint).orDie }
-      .provideLayer(clientLayer)
+      .provideCustomLayer(clientLayer)
 }
